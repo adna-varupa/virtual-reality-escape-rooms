@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Politika privatnosti";
+}
+
+<style>
+    .privacy-container {
+        background: #131313; 
+        color: #d0d0d0;
+        padding: 50px;
+        max-width: 850px;
+        margin: 0px auto;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.03);
+        border: 1px solid #222;
+    }
+
+    .privacy-header {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: #c4c4c4;
+        margin-bottom: 25px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .privacy-intro {
+        font-size: 16px;
+        color: #a5a5a5; 
+        text-align: center;
+        margin-bottom: 30px;
+        line-height: 1.8;
+    }
+
+    .privacy-section {
+        background: #181818; 
+        padding: 25px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #292929;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .privacy-section:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.05);
+        }
+
+        .privacy-section h4 {
+            color: #bdbdbd;
+            font-size: 18px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .privacy-section p {
+            font-size: 14px;
+            color: #8e8e8e;
+            line-height: 1.7;
+        }
+
+    .privacy-container a {
+        color: #a0a0a0;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease-in-out;
+    }
+
+        .privacy-container a:hover {
+            color: #bdbdbd;
+            text-decoration: underline;
+        }
+
+    .btn-gray {
+        background: #222 !important;
+        border: 1px solid #333 !important;
+        color: #bdbdbd !important;
+        padding: 12px 24px;
+        font-weight: bold;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+        .btn-gray:hover {
+            background: #2e2e2e !important;
+            border-color: #444 !important;
+            transform: scale(1.06);
+        }
+</style>
+
+<div class="container privacy-container">
+    <h1 class="privacy-header">@ViewData["Title"]</h1>
+
+    <p class="privacy-intro">
+        Poštujemo vašu privatnost. Ovdje možete saznati kako prikupljamo, koristimo i štitimo vaše podatke.
+    </p>
+
+    <div class="privacy-section">
+        <h4>📌 Koje informacije prikupljamo?</h4>
+        <p>Možemo prikupljati podatke poput vašeg imena, e-mail adrese i aktivnosti na platformi kako bismo poboljšali vaše iskustvo.</p>
+    </div>
+
+    <div class="privacy-section">
+        <h4>🔹 Kako koristimo vaše podatke?</h4>
+        <p>Vaši podaci se koriste za analizu, personalizaciju sadržaja, sigurnost i poboljšanje korisničkog iskustva.</p>
+    </div>
+
+    <div class="privacy-section">
+        <h4>🛡️ Sigurnosne mjere</h4>
+        <p>Koristimo enkripciju i napredne metode zaštite kako bismo osigurali sigurnost vaših podataka.</p>
+    </div>
+
+    <div class="privacy-section">
+        <h4>✔️ Vaša prava</h4>
+        <p>Možete zatražiti pristup, izmjenu ili brisanje vaših podataka u bilo kojem trenutku.</p>
+    </div>
+
+    <div class="privacy-section">
+        <h4>📧 Kontakt</h4>
+        <p>Za pitanja o privatnosti, kontaktirajte nas na <a href="mailto:support@virtualrealityescape.com">support@virtualrealityescape.com</a>.</p>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="Index" asp-controller="Home" class="btn-gray">Nazad na početnu</a>
+    </div>
+</div>

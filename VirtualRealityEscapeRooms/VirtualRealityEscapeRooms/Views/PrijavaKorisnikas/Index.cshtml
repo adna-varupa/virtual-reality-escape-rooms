@@ -1,0 +1,154 @@
+﻿@model IEnumerable<VR_escape_rooms.modeli.PrijavaKorisnika>
+
+@{
+    ViewData["Title"] = "Prijave Korisnika";
+}
+
+<style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+        max-width: 700px; 
+        margin: 60px auto; 
+        padding: 40px;
+        background: #1e1e1e;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+        color: #f5f5f5;
+        margin-bottom: 30px; 
+    }
+
+    .table-container {
+        overflow-x: auto;
+        padding: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #232323;
+        color: #e0e0e0;
+        border-radius: 8px;
+    }
+
+        .table thead {
+            background: #333;
+            color: #fff;
+        }
+
+        .table th, .table td {
+            padding: 14px; 
+            text-align: center;
+            border-bottom: 1px solid #444;
+            font-size: 15px;
+        }
+
+        .table tbody tr:hover {
+            background: #2e2e2e;
+            transition: 0.3s ease-in-out;
+        }
+
+        .table td a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #4a90e2;
+            transition: color 0.3s ease-in-out;
+            font-size: 14px;
+        }
+
+            .table td a:hover {
+                color: #357ab8;
+            }
+
+    .btn-container {
+        margin-top: 40px;
+    }
+
+    .btn-secondary {
+        background-color: #4a90e2;
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+        font-size: 15px;
+    }
+
+        .btn-secondary:hover {
+            background-color: #357ab8;
+            transform: scale(1.05);
+        }
+
+    footer .container {
+        border-radius: 0px !important;
+        background-color: black;
+        max-width: 1200px;
+        margin: 0 !important;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: 60px auto;
+        padding: 40px;
+        background: #1e1e1e;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        padding-bottom: 60px; 
+    }
+
+    .btn-container {
+        margin-top: 40px;
+        padding-bottom: 20px; 
+        text-align: center; 
+    }
+</style>
+
+<div class="container">
+    <h1 style="padding: 20px 0; text-align: center;">Prijave Korisnika</h1>
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Razlog prijave</th>
+                    <th>Status</th>
+                    <th>Datum prijave</th>
+                    <th>Korisnik koji je prijavio</th>
+                    <th>Prijavljeni korisnik</th>
+                    <th>Akcije</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Razlog)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DatumPrijave)</td>
+                        <td style="color: #fff;">@Html.DisplayFor(modelItem => item.Prijavio.Email)</td>
+                        <td style="color: #fff;">@Html.DisplayFor(modelItem => item.Prijavljeni.Email)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ID">Uredi</a> |
+                            <a asp-action="Details" asp-route-id="@item.ID">Detalji</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ID" class="text-danger">Obriši</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

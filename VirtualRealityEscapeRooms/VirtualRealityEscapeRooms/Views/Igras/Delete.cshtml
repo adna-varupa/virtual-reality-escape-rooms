@@ -1,0 +1,145 @@
+﻿@model VR_escape_rooms.modeli.Igra
+
+@{
+    ViewData["Title"] = "Obriši igru";
+}
+
+<style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .delete-container {
+        max-width: 600px;
+        margin: 50px auto 100px; 
+        background: #1a1a1a;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+        color: #f5f5f5;
+        border-bottom: 2px solid #444;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #d3d3d3;
+    }
+
+    .game-details {
+        text-align: left;
+        font-size: 15px;
+        padding: 10px;
+        background: #232323;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+        .game-details dt {
+            font-weight: bold;
+            color: #4a90e2;
+        }
+
+        .game-details dd {
+            margin-bottom: 10px;
+        }
+
+    .image-preview {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .game-image {
+        max-width: 200px;
+        height: auto;
+        border: 1px solid #444;
+        padding: 5px;
+        border-radius: 8px;
+        background: #2c2c2c;
+    }
+
+    .btn-danger {
+        background-color: #a33;
+        border: none;
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: all 0.3s ease-in-out;
+        margin-right: 10px;
+    }
+
+        .btn-danger:hover {
+            background-color: #c44;
+            transform: scale(1.05);
+        }
+
+    .btn-secondary {
+        background-color: #444;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .btn-secondary:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
+</style>
+
+<div class="delete-container">
+    <h1>Obriši igru</h1>
+
+    <h3>Da li ste sigurni da želite obrisati ovu igru?</h3>
+
+    <dl class="game-details">
+        <dt>@Html.DisplayNameFor(model => model.Naziv)</dt>
+        <dd>@Html.DisplayFor(model => model.Naziv)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Tezina)</dt>
+        <dd>@Html.DisplayFor(model => model.Tezina)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Trajanje)</dt>
+        <dd>@Html.DisplayFor(model => model.Trajanje) min</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Opis)</dt>
+        <dd>@Html.DisplayFor(model => model.Opis)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Zanr)</dt>
+        <dd>@Html.DisplayFor(model => model.Zanr)</dd>
+
+        <dt>Slika igre</dt>
+        <dd class="image-preview">
+            @if (!string.IsNullOrEmpty(Model.SlikaPath))
+            {
+                <img src="@Model.SlikaPath" alt="Slika igre" class="game-image" />
+            }
+            else
+            {
+                <span style="color: #999;">Nema slike</span>
+            }
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <button type="submit" class="btn btn-danger">Obriši</button>
+        <a asp-action="Index" class="btn btn-secondary">Nazad na listu</a>
+    </form>
+</div>

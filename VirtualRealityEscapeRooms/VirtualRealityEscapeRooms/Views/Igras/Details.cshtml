@@ -1,0 +1,141 @@
+﻿@model VR_escape_rooms.modeli.Igra
+
+@{
+    ViewData["Title"] = "Detalji igre";
+}
+
+<style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .details-container {
+        max-width: 700px;
+        margin: 50px auto 100px;
+        background: #1a1a1a;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 28px;
+        font-weight: bold;
+        color: #f5f5f5;
+        border-bottom: 2px solid #444;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .img-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .game-img {
+        max-width: 100%;
+        height: auto;
+        max-height: 350px; 
+        border-radius: 12px;
+        border: 3px solid #444;
+        padding: 5px;
+        background: #2c2c2c;
+    }
+
+    .game-info {
+        width: 100%;
+        text-align: left;
+        font-size: 16px;
+        padding: 15px;
+        background: #232323;
+        border-radius: 8px;
+    }
+
+        .game-info th {
+            text-align: left;
+            padding: 10px;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        .game-info td {
+            padding: 10px;
+            color: #ddd;
+        }
+
+    .btn-primary {
+        background-color: #4a90e2;
+        border: none;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: all 0.3s ease-in-out;
+        padding: 10px 15px;
+    }
+
+        .btn-primary:hover {
+            background-color: #357ab8;
+            transform: scale(1.05);
+        }
+
+    .btn-secondary {
+        background-color: #444;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .btn-secondary:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
+</style>
+
+<div class="details-container">
+    <h1>Detalji igre</h1>
+
+    @if (!string.IsNullOrEmpty(Model.SlikaPath))
+    {
+        <div class="img-container">
+            <img src="@Model.SlikaPath" alt="Slika igre" class="game-img" />
+        </div>
+    }
+
+    <table class="game-info">
+        <tbody>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Naziv)</th>
+                <td>@Html.DisplayFor(model => model.Naziv)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Tezina)</th>
+                <td>@Html.DisplayFor(model => model.Tezina)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Trajanje)</th>
+                <td>@Html.DisplayFor(model => model.Trajanje) min</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Opis)</th>
+                <td>@Html.DisplayFor(model => model.Opis)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Zanr)</th>
+                <td>@Html.DisplayFor(model => model.Zanr)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="mt-4">
+        <a asp-action="Index" class="btn btn-secondary">Nazad na listu</a>
+    </div>
+</div>

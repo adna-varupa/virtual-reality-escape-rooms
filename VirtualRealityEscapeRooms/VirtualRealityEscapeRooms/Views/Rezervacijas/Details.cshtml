@@ -1,0 +1,137 @@
+﻿@model VR_escape_rooms.modeli.Rezervacija
+
+@{
+    ViewData["Title"] = "Detalji Rezervacije";
+}
+
+<style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .details-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        background: #1e1e1e;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #f5f5f5;
+    }
+
+    .details-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: #232323;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+        .details-table th, .details-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #444;
+            text-align: left;
+        }
+
+        .details-table th {
+            background: #333;
+            color: #e0e0e0;
+            font-weight: 600;
+        }
+
+        .details-table td {
+            color: #ccc;
+        }
+
+        .details-table tr:last-child td {
+            border-bottom: none;
+        }
+
+    .email-highlight {
+        color: #ffffff !important;
+        font-weight: bold;
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .btn-primary {
+        background-color: #4a90e2;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: all 0.3s ease-in-out;
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+    }
+
+        .btn-primary:hover {
+            background: #357ab8;
+            transform: scale(1.05);
+        }
+
+    .btn-secondary {
+        background: #777;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: all 0.3s ease-in-out;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .btn-secondary:hover {
+            background: #555;
+            transform: scale(1.05);
+        }
+</style>
+
+<div class="details-container">
+    <h1>Detalji Rezervacije</h1>
+
+    <table class="details-table">
+        <tbody>
+            <tr>
+                <th>Korisnik</th>
+                <td class="email-highlight">@Html.DisplayFor(model => model.Korisnik.Email)</td> 
+            </tr>
+            <tr>
+                <th>Igra</th>
+                <td>@Html.DisplayFor(model => model.Igra.ID)</td>
+            </tr>
+            <tr>
+                <th>Datum Rezervacije</th>
+                <td>@Html.DisplayFor(model => model.DatumRezervacije)</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>@Html.DisplayFor(model => model.Status)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="buttons-container">
+        <a asp-action="Edit" asp-route-id="@Model?.ID" class="btn-primary">Uredi</a>
+        <a asp-action="Index" class="btn-secondary">Nazad na listu</a>
+    </div>
+</div>

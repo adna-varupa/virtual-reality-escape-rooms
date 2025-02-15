@@ -1,0 +1,160 @@
+﻿@model VR_escape_rooms.modeli.Igra
+@using VR_escape_rooms.modeli
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .form-container {
+        max-width: 600px;
+        background: #1e1e1e;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+        color: #f5f5f5;
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #c0c0c0;
+        margin-bottom: 15px;
+    }
+
+    .form-label {
+        font-weight: bold;
+        color: #d3d3d3;
+    }
+
+    .form-control {
+        background: #232323;
+        border: 1px solid #3a3a3a;
+        color: #e0e0e0;
+        border-radius: 6px;
+    }
+
+    .form-control:focus {
+        border-color: #4a90e2;
+        box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+    }
+
+    .btn-primary {
+        background: #4a90e2;
+        border: none;
+        color: white;
+        font-weight: bold;
+        border-radius: 6px;
+        padding: 10px 20px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-primary:hover {
+        background: #357ab8;
+        transform: scale(1.05);
+    }
+
+    .btn-secondary {
+        background: #444;
+        border: none;
+        color: white;
+        border-radius: 6px;
+        padding: 8px 16px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-secondary:hover {
+        background: #666;
+        transform: scale(1.05);
+    }
+</style>
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="form-container">
+        <h1>Dodaj igru</h1>
+
+        <h4>Igra</h4>
+        <hr />
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Ime igre -->
+            <div class="form-group mb-3">
+                <label asp-for="Naziv" class="form-label"></label>
+                <input asp-for="Naziv" class="form-control" />
+                <span asp-validation-for="Naziv" class="text-danger"></span>
+            </div>
+
+            <!-- Tezina dropdown -->
+            <div class="form-group mb-3">
+                <label class="form-label">@Html.LabelFor(model => model.Tezina)</label>
+                @Html.DropDownListFor(
+                         model => model.Tezina,
+                         new SelectList(Enum.GetValues(typeof(Tezina)).Cast<Tezina>().Select(t => new { Value = t, Text = t.ToString() } ),
+                         "Value", "Text"),
+                         "Odaberite tezinu",
+                         new { @class = "form-control" })
+                <span asp-validation-for="Tezina" class="text-danger"></span>
+            </div>
+
+            <!-- Polje trajanje -->
+            <div class="form-group mb-3">
+                <label asp-for="Trajanje" class="form-label"></label>
+                <input asp-for="Trajanje" class="form-control" />
+                <span asp-validation-for="Trajanje" class="text-danger"></span>
+            </div>
+
+            <!-- Opis -->
+            <div class="form-group mb-3">
+                <label asp-for="Opis" class="form-label"></label>
+                <input asp-for="Opis" class="form-control" />
+                <span asp-validation-for="Opis" class="text-danger"></span>
+            </div>
+
+            <!-- Zanr dropdown -->
+            <div class="form-group mb-3">
+                <label class="form-label">@Html.LabelFor(model => model.Zanr)</label>
+                @Html.DropDownListFor(
+                         model => model.Zanr,
+                         new SelectList(Enum.GetValues(typeof(Zanr)).Cast<Zanr>().Select(z => new { Value = z, Text = z.ToString() }),
+                         "Value", "Text"),
+                         "Odaberite zanr",
+                         new { @class = "form-control" })
+                <span asp-validation-for="Zanr" class="text-danger"></span>
+            </div>
+
+            <!-- Slika -->
+            <div class="form-group mb-3">
+                <label class="form-label">Dodaj sliku</label>
+                <input type="file" name="SlikaFile" class="form-control" />
+            </div>
+
+            <!-- Submit  -->
+            <div class="text-center">
+                <input type="submit" value="Dodaj" class="btn btn-primary px-4" />
+            </div>
+        </form>
+
+        <!-- Nazad na listu -->
+        <div class="text-center mt-3">
+            <a asp-action="Index" class="btn btn-secondary">Nazad na listu</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

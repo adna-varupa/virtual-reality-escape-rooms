@@ -1,0 +1,167 @@
+﻿@model IEnumerable<VR_escape_rooms.modeli.Rezervacija>
+
+@{
+    ViewData["Title"] = "Rezervacije";
+}
+
+<style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 40px;
+        background: #1a1a1a;
+        border-radius: 12px;
+        box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.4);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #f5f5f5;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .btn-primary {
+        background: #4a90e2;
+        border: none;
+        color: white;
+        font-weight: bold;
+        border-radius: 6px;
+        padding: 12px 18px;
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .btn-primary:hover {
+            background: #357ab8;
+            transform: scale(1.05);
+        }
+
+    .alert {
+        border-radius: 6px;
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+
+    .table-container {
+        margin-top: 20px;
+        overflow-x: auto;
+    }
+
+    .table {
+        width: 100%;
+        background: #232323;
+        color: #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+        .table thead {
+            background: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .table th, .table td {
+            padding: 14px;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .table tbody tr:hover {
+            background: #292929;
+            transition: all 0.3s ease-in-out;
+        }
+
+    .action-links a {
+        color: #4a90e2;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out;
+    }
+
+        .action-links a:hover {
+            color: #357ab8;
+        }
+
+    .delete-link {
+        color: #d9534f !important;
+    }
+
+        .delete-link:hover {
+            color: #c9302c !important;
+        }
+
+    footer .container {
+        border-radius: 0px !important;
+        background-color:black;
+        max-width: 1200px;
+        margin: 0 !important;
+    }
+</style>
+
+<div class="container">
+    <h1>Rezervacije</h1>
+
+    @if (!User.IsInRole("Admin"))
+    {
+        <div class="mb-4">
+            <a asp-action="Create" class="btn btn-primary">➕ Napravi novu rezervaciju</a>
+        </div>
+    }
+
+    <div>
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["Success"]
+            </div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Error"]
+            </div>
+        }
+    </div>
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Korisnik)</th>
+                    <th>@Html.DisplayNameFor(model => model.Igra)</th>
+                    <th>@Html.DisplayNameFor(model => model.DatumRezervacije)</th>
+                    <th>@Html.DisplayNameFor(model => model.Status)</th>
+                    <th>Akcije</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Korisnik.Email)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Igra.Naziv)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DatumRezervacije)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                        <td class="action-links">
+                            <a asp-action="Edit" asp-route-id="@item.ID">✏ Uredi</a> |
+                            <a asp-action="Details" asp-route-id="@item.ID">🔍 Detalji</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ID" class="delete-link">🗑 Obriši</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

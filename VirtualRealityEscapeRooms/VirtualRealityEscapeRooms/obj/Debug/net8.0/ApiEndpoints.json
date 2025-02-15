@@ -1,0 +1,624 @@
+[
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.IgraController",
+    "Method": "GetIgre",
+    "RelativePath": "api/Igra",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VR_escape_rooms.modeli.Igra, VirtualRealityEscapeRooms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.IgraController",
+    "Method": "PostIgra",
+    "RelativePath": "api/Igra",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "igra",
+        "Type": "VR_escape_rooms.modeli.Igra",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VR_escape_rooms.modeli.Igra",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.IgraController",
+    "Method": "GetIgra",
+    "RelativePath": "api/Igra/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VR_escape_rooms.modeli.Igra",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.IgraController",
+    "Method": "PutIgra",
+    "RelativePath": "api/Igra/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "igra",
+        "Type": "VR_escape_rooms.modeli.Igra",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.IgraController",
+    "Method": "DeleteIgra",
+    "RelativePath": "api/Igra/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.IgraController",
+    "Method": "FiltrirajIgre",
+    "RelativePath": "api/Igra/filtriraj",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tezina",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "zanr",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VR_escape_rooms.modeli.Igra, VirtualRealityEscapeRooms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.KorisnikController",
+    "Method": "GetKorisnici",
+    "RelativePath": "api/Korisnik",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VR_escape_rooms.modeli.Korisnik, VirtualRealityEscapeRooms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.KorisnikController",
+    "Method": "PostKorisnik",
+    "RelativePath": "api/Korisnik",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "korisnik",
+        "Type": "VR_escape_rooms.modeli.Korisnik",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VR_escape_rooms.modeli.Korisnik",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.KorisnikController",
+    "Method": "GetKorisnik",
+    "RelativePath": "api/Korisnik/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VR_escape_rooms.modeli.Korisnik",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.KorisnikController",
+    "Method": "PutKorisnik",
+    "RelativePath": "api/Korisnik/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "korisnik",
+        "Type": "VR_escape_rooms.modeli.Korisnik",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.KorisnikController",
+    "Method": "DeleteKorisnik",
+    "RelativePath": "api/Korisnik/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.KorisnikController",
+    "Method": "GetRangLista",
+    "RelativePath": "api/Korisnik/rang_lista",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VR_escape_rooms.modeli.Korisnik, VirtualRealityEscapeRooms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.OcjenaController",
+    "Method": "GetOcjene",
+    "RelativePath": "api/Ocjena",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VR_escape_rooms.modeli.Ocjena, VirtualRealityEscapeRooms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.OcjenaController",
+    "Method": "PostOcjena",
+    "RelativePath": "api/Ocjena",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ocjena",
+        "Type": "VR_escape_rooms.modeli.Ocjena",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VR_escape_rooms.modeli.Ocjena",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.OcjenaController",
+    "Method": "GetOcjena",
+    "RelativePath": "api/Ocjena/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VR_escape_rooms.modeli.Ocjena",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.OcjenaController",
+    "Method": "PutOcjena",
+    "RelativePath": "api/Ocjena/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "ocjena",
+        "Type": "VR_escape_rooms.modeli.Ocjena",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.OcjenaController",
+    "Method": "DeleteOcjena",
+    "RelativePath": "api/Ocjena/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.PrijavaKorisnikaController",
+    "Method": "GetPrijaveKorisnika",
+    "RelativePath": "api/PrijavaKorisnika",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VR_escape_rooms.modeli.PrijavaKorisnika, VirtualRealityEscapeRooms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.PrijavaKorisnikaController",
+    "Method": "PostPrijavaKorisnika",
+    "RelativePath": "api/PrijavaKorisnika",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prijavaKorisnika",
+        "Type": "VR_escape_rooms.modeli.PrijavaKorisnika",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VR_escape_rooms.modeli.PrijavaKorisnika",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.PrijavaKorisnikaController",
+    "Method": "GetPrijavaKorisnika",
+    "RelativePath": "api/PrijavaKorisnika/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VR_escape_rooms.modeli.PrijavaKorisnika",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.PrijavaKorisnikaController",
+    "Method": "PutPrijavaKorisnika",
+    "RelativePath": "api/PrijavaKorisnika/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "prijavaKorisnika",
+        "Type": "VR_escape_rooms.modeli.PrijavaKorisnika",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.PrijavaKorisnikaController",
+    "Method": "DeletePrijavaKorisnika",
+    "RelativePath": "api/PrijavaKorisnika/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.RezervacijaController",
+    "Method": "GetRezervacije",
+    "RelativePath": "api/Rezervacija",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VR_escape_rooms.modeli.Rezervacija, VirtualRealityEscapeRooms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.RezervacijaController",
+    "Method": "PostRezervacija",
+    "RelativePath": "api/Rezervacija",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rezervacija",
+        "Type": "VR_escape_rooms.modeli.Rezervacija",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VR_escape_rooms.modeli.Rezervacija",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.RezervacijaController",
+    "Method": "GetRezervacija",
+    "RelativePath": "api/Rezervacija/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VR_escape_rooms.modeli.Rezervacija",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.RezervacijaController",
+    "Method": "PutRezervacija",
+    "RelativePath": "api/Rezervacija/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "rezervacija",
+        "Type": "VR_escape_rooms.modeli.Rezervacija",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.RezervacijaController",
+    "Method": "DeleteRezervacija",
+    "RelativePath": "api/Rezervacija/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.RezervacijaController",
+    "Method": "ZavrsiIgru",
+    "RelativePath": "api/Rezervacija/zavrsi_igru",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rezultat",
+        "Type": "VirtualRealityEscapeRooms.Models.RezultatIgre",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VirtualRealityEscapeRooms.Controllers.StatistikaController",
+    "Method": "Index",
+    "RelativePath": "Statistika",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
